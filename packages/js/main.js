@@ -180,33 +180,38 @@ const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
-  );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme
-  );
+// Function to set the theme
+function setTheme(theme) {
+  if (theme === "dark") {
+    document.body.classList.add(darkTheme);
+    themeButton.classList.add(iconTheme);
+  } else {
+    document.body.classList.remove(darkTheme);
+    themeButton.classList.remove(iconTheme);
+  }
 }
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
+  const currentTheme = getCurrentTheme();
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  setTheme(newTheme);
+  
+  // Save the theme
+  localStorage.setItem("selected-theme", newTheme);
 });
+
+// Function to get the current theme
+function getCurrentTheme() {
+  return document.body.classList.contains(darkTheme) ? "dark" : "light";
+}
+
+// Apply the saved theme on page load
+const savedTheme = localStorage.getItem("selected-theme");
+if (savedTheme) {
+  setTheme(savedTheme);
+} else {
+  // Apply dark theme by default
+  setTheme("dark");
+}
+
