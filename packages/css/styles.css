@@ -468,7 +468,7 @@ img {
 }
 
 .skills__icons {
-  margin-right: var(--mb-0-5);
+  margin-right: var(--mb-0-75);
 }
 
 .skills__title {
@@ -483,14 +483,11 @@ img {
 .skills__arrow {
   margin-left: auto;
   transition: 0.4s;
-  width: 40px;
-  height: 40px; 
 }
-
 
 .skills__list {
   row-gap: 1.5rem;
-  padding-left: 2.7rem;
+
 }
 
 .skills__titles {
