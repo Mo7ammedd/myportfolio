@@ -288,7 +288,7 @@ img {
 }
 
 .home__social {
-  display: grid;
+  display:flexbox;
   grid-template-columns: max-content;
   row-gap: 1rem;
 }
