@@ -212,6 +212,6 @@ if (savedTheme) {
   setTheme(savedTheme);
 } else {
   // Apply dark theme by default
-  setTheme("light");
+  setTheme("Dark");
 }
 
