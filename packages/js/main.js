@@ -214,4 +214,38 @@ if (savedTheme) {
   // Apply dark theme by default
   setTheme("Dark");
 }
+////////////////////////////////////////
+  emailjs.init("Mm5CkDfN366OuUU8C"); // Replace "user_your_user_id" with your actual User ID
+
+  function sendEmail() {
+    // Get form data
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var project = document.getElementById("project").value;
+    var message = document.getElementById("message").value;
+
+    // Use Email.js to send the email
+    emailjs.send("service_pw22pdy", "template_nsos01e", {
+      name: name,
+      email: email,
+      project: project,
+      message: message,
+    })
+    .then(function(response) {
+      console.log("Email sent successfully", response);
+      // Add any additional actions upon successful submission
+    }, function(error) {
+      console.log("Email sending failed", error);
+      // Handle errors or provide user feedback
+    });
+  }
+
+  // Attach the sendEmail function to the form submission
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    sendEmail(); // Call the sendEmail function
+  });
+
+
+
 
