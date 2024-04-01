@@ -715,70 +715,36 @@
          <!--==================== TESTIMONIAL ====================-->
          <!--==================== CONTACT ME ====================-->
          <section class="contact section" id="contact">
-            <h2 class="section__title"> CONTACT ME </h2>
+            <h2 class="section__title">Contact Me</h2>
             <span class="section__subtitle">Get in touch</span>
+        
             <div class="contact__container container grid">
-               <div>
-                <div class="contact__information">
-                    <i class="uil uil-phone contact__icon"></i>
-                    <div>
-                       <a href="tel:+201112961724">
-                          <h3 class="contact__title">
-                             Call Me
-                          </h3>
-                          <span class="contact__subtitle">
-                             +20 111 296 1724
-                          </span>
-                       </a>
+                <form id="contactForm" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="name" class="contact__label">Name</label>
+                            <input type="text" id="name" name="name" class="contact__input" required>
+                        </div>
+                        <div class="contact__content">
+                            <label for="email" class="contact__label">Email</label>
+                            <input type="email" id="email" name="email" class="contact__input" required>
+                        </div>
                     </div>
-                 </div>                 
-                  <div class="contact__information">
-                     <i class="uil uil-envelope contact__icon"></i>               
-                     <div>
-                        <a href="mailto:medo.mostafa22255@icloud.com">
-                           <h3 class="contact__title">Email</h3>
-                           <span class="contact__subtitle">medo.mostafa22255@icloud.com</span>
-                        </a>
-                     </div>
-                  </div>
-                  <div class="contact__information">
-                    <i class="uil uil-map-marker contact__icon"></i>
-                    <div>
-                       <h3 class="contact__title">
-                          Location
-                       </h3>
-                       <span class="contact__subtitle">
-                          Ismailia, Egypt</a>
-                       </span>
+                    <div class="contact__content">
+                        <label for="project" class="contact__label">Project</label>
+                        <input type="text" id="project" name="project" class="contact__input">
                     </div>
-                 </div>                 
-               </div>
-               <form action="" class="contact__form grid">
-                  <div class="contact__inputs grid">
-                     <div class="contact__content">
-                        <label for="" class="contact__label">Name</label>
-                        <input type="text" class="contact__input">
-                     </div>
-                     <div class="contact__content">
-                        <label for="" class="contact__label">Email</label>
-                        <input type="email" class="contact__input">
-                     </div>
-                  </div>
-                  <div class="contact__content">
-                     <label for="" class="contact__label">Project</label>
-                     <input type="text" class="contact__input">
-                  </div>
-                  <div class="contact__content">
-                     <label for="" class="contact__label">Message</label>
-                     <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
-                  </div>
-                  <div>
-                     <a href="#" class="button button--flex">
-                     Send Message
-                     <i class="uil uil-message button__icon"></i>
-                     </a>
-                  </div>
-               </form>
+                    <div class="contact__content">
+                        <label for="message" class="contact__label">Message</label>
+                        <textarea id="message" name="message" cols="0" rows="7" class="contact__input" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="button button--flex">
+                            Send Message
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
          </section>
       </main>

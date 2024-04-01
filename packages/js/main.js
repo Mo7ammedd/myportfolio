@@ -233,17 +233,14 @@ if (savedTheme) {
     })
     .then(function(response) {
       console.log("Email sent successfully", response);
-      // Add any additional actions upon successful submission
     }, function(error) {
       console.log("Email sending failed", error);
-      // Handle errors or provide user feedback
     });
   }
 
-  // Attach the sendEmail function to the form submission
   document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    sendEmail(); // Call the sendEmail function
+    event.preventDefault(); 
+    sendEmail(); 
   });
 
 
