@@ -212,7 +212,7 @@ if (savedTheme) {
   setTheme(savedTheme);
 } else {
   // Apply dark theme by default
-  setTheme("Dark");
+  setTheme("dark");
 }
 ////////////////////////////////////////
   emailjs.init("Mm5CkDfN366OuUU8C"); // Replace "user_your_user_id" with your actual User ID
