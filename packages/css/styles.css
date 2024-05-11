@@ -834,6 +834,20 @@ img {
 .swiper-pagination-bullet {
   outline: none;
 }
+/*==================== blog================================ */
+.blog__container {
+  gap: 1.5rem;
+}
+.blog__description {
+  margin-bottom: var(--mb-1-5);
+}
+.blog__button:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+.blog__button {
+  cursor: pointer;
+  font-size: var(--small-font-size);
+}
 /*==================== PROJECT IN MIND ====================*/
 .project {
   text-align: center;
