@@ -92,23 +92,51 @@ modalCloses.forEach((modalClose) => {
 });
 
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-  cssMode: true,
-  loop: true,
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+document.addEventListener('DOMContentLoaded', function () {
+  const portfolioContents = document.querySelectorAll('.portfolio__content');
+  let currentIndex = 0;
+  let swiperInstance = null;
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+  function showNextContent() {
+    portfolioContents[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % portfolioContents.length;
+    portfolioContents[currentIndex].classList.add('active');
 
-  /* mousewheel: true,
-  keyboard: true, */
+    if (swiperInstance) {
+      swiperInstance.slideTo(currentIndex);
+    }
+  }
+
+  swiperInstance = new Swiper(".portfolio__container", {
+    cssMode: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 5000,
+    },
+    on: {
+      slideChange: function () {
+        currentIndex = swiperInstance.realIndex;
+        portfolioContents.forEach(content => content.classList.remove('active'));
+        portfolioContents[currentIndex].classList.add('active');
+      }
+    }
+  });
+
+  portfolioContents[currentIndex].classList.add('active');
+
+  setInterval(showNextContent, 5000);
 });
+
+
 
 /*==================== TESTIMONIAL ====================*/
 let swiperTestimonial = new Swiper(".testimonial__container", {
@@ -196,7 +224,7 @@ themeButton.addEventListener("click", () => {
   const currentTheme = getCurrentTheme();
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   setTheme(newTheme);
-  
+
   // Save the theme
   localStorage.setItem("selected-theme", newTheme);
 });
@@ -215,39 +243,39 @@ if (savedTheme) {
   setTheme("dark");
 }
 ////////////////////////////////////////
-  emailjs.init("Mm5CkDfN366OuUU8C"); // Replace "user_your_user_id" with your actual User ID
+emailjs.init("Mm5CkDfN366OuUU8C"); // Replace "user_your_user_id" with your actual User ID
 
-  function sendEmail() {
-    // Get form data
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var project = document.getElementById("project").value;
-    var message = document.getElementById("message").value;
+function sendEmail() {
+  // Get form data
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var project = document.getElementById("project").value;
+  var message = document.getElementById("message").value;
 
-    // Use Email.js to send the email
-    emailjs.send("service_pw22pdy", "template_nsos01e", {
-      name: name,
-      email: email,
-      project: project,
-      message: message,
-    })
-    .then(function(response) {
+  // Use Email.js to send the email
+  emailjs.send("service_pw22pdy", "template_nsos01e", {
+    name: name,
+    email: email,
+    project: project,
+    message: message,
+  })
+    .then(function (response) {
       console.log("Email sent successfully", response);
-    }, function(error) {
+    }, function (error) {
       console.log("Email sending failed", error);
     });
-  }
+}
 
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
-    sendEmail(); 
-  });
-  //////////////////////////////////////
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  sendEmail();
+});
+//////////////////////////////////////
 
-  window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
-    loader.style.display = 'none';
-  });
+window.addEventListener('load', function () {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'none';
+});
 
 
 

@@ -706,6 +706,9 @@ img {
 }
 
 /*==================== PORTFOLIO ====================*/
+
+@import 'https://unpkg.com/swiper/swiper-bundle.min.css';
+
 .portfolio__container {
   overflow: initial;
 }
@@ -764,7 +767,20 @@ img {
 .swiper-pagination-bullet {
   outline: none;
 }
-/* Blog Section Styles */
+
+.portfolio__content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.portfolio__content.active {
+  opacity: 1;
+}
+
+.swiper-slide-active .portfolio__content {
+  opacity: 1;
+}
+
 /*==================== BLOG ====================*/
 
 .blog .section {
