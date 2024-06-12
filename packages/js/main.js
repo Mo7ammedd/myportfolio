@@ -96,19 +96,8 @@ modalCloses.forEach((modalClose) => {
 document.addEventListener('DOMContentLoaded', function () {
   const portfolioContents = document.querySelectorAll('.portfolio__content');
   let currentIndex = 0;
-  let swiperInstance = null;
 
-  function showNextContent() {
-    portfolioContents[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % portfolioContents.length;
-    portfolioContents[currentIndex].classList.add('active');
-
-    if (swiperInstance) {
-      swiperInstance.slideTo(currentIndex);
-    }
-  }
-
-  swiperInstance = new Swiper(".portfolio__container", {
+  const swiperInstance = new Swiper(".portfolio__container", {
     cssMode: true,
     loop: true,
     navigation: {
@@ -121,19 +110,21 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     autoplay: {
       delay: 5000,
+      disableOnInteraction: false,
     },
     on: {
-      slideChange: function () {
-        currentIndex = swiperInstance.realIndex;
-        portfolioContents.forEach(content => content.classList.remove('active'));
+      init: function () {
         portfolioContents[currentIndex].classList.add('active');
-      }
+      },
+      slideChange: function () {
+        portfolioContents.forEach(content => content.classList.remove('active'));
+        currentIndex = (swiperInstance.realIndex) % portfolioContents.length;
+        portfolioContents[currentIndex].classList.add('active');
+      },
     }
   });
 
   portfolioContents[currentIndex].classList.add('active');
-
-  setInterval(showNextContent, 5000);
 });
 
 
