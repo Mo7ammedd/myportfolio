@@ -830,6 +830,7 @@ img {
 }
 
 .blog__card-link {
+  
   display: inline-block;
   margin-top: var(--mb-1);
   color: var(--first-color);
