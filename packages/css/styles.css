@@ -461,7 +461,6 @@ img {
 .skills {
   padding: 2rem 0;
   overflow: hidden;
-  background-color: var(--container-color);
 }
 
 .skills__container {
