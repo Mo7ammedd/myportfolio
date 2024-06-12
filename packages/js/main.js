@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const swiperInstance = new Swiper(".portfolio__container", {
     cssMode: true,
-    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -126,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   portfolioContents[currentIndex].classList.add('active');
 });
+
 
 
 
