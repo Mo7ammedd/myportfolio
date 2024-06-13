@@ -234,28 +234,32 @@ if (savedTheme) {
   setTheme("dark");
 }
 ////////////////////////////////////////
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const project = document.getElementById("project").value;
-  const message = document.getElementById("message").value;
+emailjs.init("Mm5CkDfN366OuUU8C"); // Replace "user_your_user_id" with your actual User ID
 
-  fetch('http://localhost:3000/send-email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, project, message }),
+function sendEmail() {
+  // Get form data
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var project = document.getElementById("project").value;
+  var message = document.getElementById("message").value;
+
+  // Use Email.js to send the email
+  emailjs.send("service_pw22pdy", "template_nsos01e", {
+    name: name,
+    email: email,
+    project: project,
+    message: message,
   })
-  .then(response => response.text())
-  .then(result => {
-    console.log('Email sent successfully:', result);
-  })
-  .catch(error => {
-    console.error('Error sending email:', error);
-  });
+    .then(function (response) {
+      console.log("Email sent successfully", response);
+    }, function (error) {
+      console.log("Email sending failed", error);
+    });
+}
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  sendEmail();
 });
 //////////////////////////////////////
 
@@ -263,7 +267,6 @@ window.addEventListener('load', function () {
   const loader = document.getElementById('loader');
   loader.style.display = 'none';
 });
-
 
 
 
