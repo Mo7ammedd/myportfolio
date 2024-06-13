@@ -20,6 +20,7 @@ app.post('/send-email', (req, res) => {
       pass: process.env.EMAIL_PASS  
     }
   });
+  
 
   const mailOptions = {
     from: email,
