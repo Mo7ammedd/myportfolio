@@ -675,7 +675,7 @@
             <!--==================== TESTIMONIAL ====================-->
             <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
-               <h2 class="section__title"> CONTACT ME </h2>
+               <h2 class="section__title">CONTACT ME</h2>
                <span class="section__subtitle">Get in touch</span>
                <div class="contact__container container grid">
                   <div>
@@ -683,12 +683,8 @@
                         <i class="uil uil-phone contact__icon"></i>
                         <div>
                            <a href="tel:+201112961724">
-                              <h3 class="contact__title">
-                                 Call Me
-                              </h3>
-                              <span class="contact__subtitle">
-                                 +20 111 296 1724
-                              </span>
+                              <h3 class="contact__title">Call Me</h3>
+                              <span class="contact__subtitle">+20 111 296 1724</span>
                            </a>
                         </div>
                      </div>
@@ -697,56 +693,47 @@
                         <div>
                            <a href="mailto:mohammedmostafanazih@gmail.com">
                               <h3 class="contact__title">Email</h3>
-                              <span
-                                 class="contact__subtitle">MohammedMostafaNazih@gmail.com</span>
+                              <span class="contact__subtitle">MohammedMostafaNazih@gmail.com</span>
                            </a>
                         </div>
                      </div>
                      <div class="contact__information">
                         <i class="uil uil-map-marker contact__icon"></i>
                         <div>
-                           <h3 class="contact__title">
-                              Location
-                           </h3>
-                           <span class="contact__subtitle">
-                              Ismailia, Egypt</a>
-                        </span>
+                           <h3 class="contact__title">Location</h3>
+                           <span class="contact__subtitle">Ismailia, Egypt</span>
+                        </div>
                      </div>
                   </div>
+                  <form id="contactForm" class="contact__form grid">
+                     <div class="contact__inputs grid">
+                        <div class="contact__content">
+                           <label for="name" class="contact__label">Name</label>
+                           <input type="text" id="name" name="name" class="contact__input" required>
+                        </div>
+                        <div class="contact__content">
+                           <label for="email" class="contact__label">Email</label>
+                           <input type="email" id="email" name="email" class="contact__input" required>
+                        </div>
+                     </div>
+                     <div class="contact__content">
+                        <label for="project" class="contact__label">Project</label>
+                        <input type="text" id="project" name="project" class="contact__input">
+                     </div>
+                     <div class="contact__content">
+                        <label for="message" class="contact__label">Message</label>
+                        <textarea id="message" name="message" cols="0" rows="7" class="contact__input"></textarea>
+                     </div>
+                     <div>
+                        <button type="submit" class="button button--flex">
+                           Send Message
+                           <i class="uil uil-message button__icon"></i>
+                        </button>
+                     </div>
+                  </form>
                </div>
-               <form id="contactForm" class="contact__form grid">
-                  <div class="contact__inputs grid">
-                     <div class="contact__content">
-                        <label for="name" class="contact__label">Name</label>
-                        <input type="text" id="name" name="name"
-                           class="contact__input">
-                     </div>
-                     <div class="contact__content">
-                        <label for="email" class="contact__label">Email</label>
-                        <input type="email" id="email" name="email"
-                           class="contact__input">
-                     </div>
-                  </div>
-                  <div class="contact__content">
-                     <label for="project" class="contact__label">Project</label>
-                     <input type="text" id="project" name="project"
-                        class="contact__input">
-                  </div>
-                  <div class="contact__content">
-                     <label for="message" class="contact__label">Message</label>
-                     <textarea id="message" name="message" cols="0" rows="7"
-                        class="contact__input"></textarea>
-                  </div>
-                  <div>
-                     <button type="submit" class="button button--flex">
-                        Send Message
-                        <i class="uil uil-message button__icon"></i>
-                     </button>
-                  </div>
-               </form>
-
-            </div>
-         </section>
+            </section>
+            
       </main>
       <!--==================== FOOTER ====================-->
       <footer class="footer">
@@ -767,7 +754,7 @@
                      <a href="#contact" class="footer__link">Contact Me</a>
                   </li>
                </ul>
-               <div class="footer__socials">
+               <!-- <div class="footer__socials">
                   <a
                      href="https://www.facebook.com/profile.php?id=100008513341810"
                      target="_blank" class="footer__social">
@@ -779,7 +766,7 @@
                   <a href="https://twitter.com/mohameddtv" target="_blank"
                      class="footer__social">
                      <i class="uil uil-twitter"></i> </a>
-               </div>
+               </div> -->
                <p class="footer__copy">&#169; Mohammed All right reserved
                   2023</p>
             </div>
