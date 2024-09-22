@@ -419,11 +419,15 @@ img {
   border-radius: 0.5rem;
   justify-self: center;
   align-items: center;
+
+
+
 }
 
 .about__description {
   text-align: center;
   margin-bottom: var(--mb-2-5);
+                      
 }
 
 .about__info {
@@ -751,21 +755,25 @@ img {
   overflow: initial;
 }
 
-.portfolio__content {
-  padding: 0 1.5rem;
-}
-
 .portfolio__img {
-  width: 265px;
+  width: 100%;
+  height: 200px; /* Set a fixed height for the images */
+  object-fit: cover; /* This will ensure the image covers the entire area without distortion */
   border-radius: 0.5rem;
   justify-self: center;
 }
 
-.portfolio__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
+.portfolio__content {
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.portfolio__title, .portfolio__description {
+  text-align: center;
+}
 .portfolio__description {
   margin-bottom: var(--mb-0-75);
 }
