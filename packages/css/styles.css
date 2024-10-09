@@ -372,6 +372,13 @@ img {
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
 }
+.button__icon2 {
+  display: inline-block;
+  font-size: 1.5rem; /* Ensure the size is big enough */
+  color: inherit;    /* Make sure it inherits the button text color */
+  vertical-align: middle;
+}
+
 
 .button:hover {
   background-color: var(--first-color-alt);
@@ -1463,7 +1470,8 @@ img {
     }
 
     .about__buttons {
-      justify-content: initial;
+      justify-content: flex-start;
+
     }
 
     .qualification__tabs {
