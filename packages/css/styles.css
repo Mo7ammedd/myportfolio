@@ -755,107 +755,78 @@ img {
 
 @import 'https://unpkg.com/swiper/swiper-bundle.min.css';
 
+.portfolio.section {
+  background-color: var(--body-color);
+  padding: 2rem 0 4rem;
+}
+
 .portfolio__container {
-  overflow: initial;
+  overflow: visible;
+  padding: 0 1.5rem;
+}
+
+.portfolio__content {
+  background-color: var(--container-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.portfolio__content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
 .portfolio__img {
   width: 100%;
-  height: 200px; /* Set a fixed height for the images */
-  object-fit: cover; /* This will ensure the image covers the entire area without distortion */
-  border-radius: 0.5rem;
-  justify-self: center;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.portfolio__content {
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.portfolio__content:hover .portfolio__img {
+  transform: scale(1.05);
 }
 
-
-
-.portfolio__title, .portfolio__description {
+.portfolio__data {
+  padding: 1.5rem;
   text-align: center;
-}
-.portfolio__description {
-  margin-bottom: var(--mb-0-75);
-}
-
-.portfolio__button:hover .button__icon {
-  transform: translateX(0.25rem);
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  content: "";
-}
-
-.swiper-portfolio-icon {
-  font-size: 2rem;
-  color: var(--first-color);
-}
-
-.swiper-button-prev {
-  left: -0.5rem;
-}
-
-.swiper-button-next {
-  right: -0.5rem;
-}
-
-.swiper-container-horizontal>.swiper-pagination-bullets {
-  bottom: -2.5rem;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--first-color);
-}
-
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
-  outline: none;
-}
-
-.portfolio__content {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.portfolio__content.active {
-  opacity: 1;
-}
-
-.swiper-slide-active .portfolio__content {
-  opacity: 1;
-}
-
-@import 'https://unpkg.com/swiper/swiper-bundle.min.css';
-
-.portfolio__container {
-  overflow: initial;
-}
-
-.portfolio__content {
-  padding: 0 1.5rem;
-}
-
-.portfolio__img {
-  width: 265px;
-  border-radius: 0.5rem;
-  justify-self: center;
 }
 
 .portfolio__title {
   font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.portfolio__content:hover .portfolio__title {
+  color: var(--first-color);
 }
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: var(--small-font-size);
+}
+
+.portfolio__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio__button:hover {
+  background-color: var(--first-color-alt);
 }
 
 .portfolio__button:hover .button__icon {
@@ -870,6 +841,11 @@ img {
 .swiper-portfolio-icon {
   font-size: 2rem;
   color: var(--first-color);
+  transition: color 0.3s ease;
+}
+
+.swiper-portfolio-icon:hover {
+  color: var(--first-color-alt);
 }
 
 .swiper-button-prev {
@@ -880,31 +856,40 @@ img {
   right: -0.5rem;
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullets {
+.swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: -2.5rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--text-color-light);
+  opacity: 0.7;
 }
 
 .swiper-pagination-bullet-active {
   background-color: var(--first-color);
-}
-
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
-  outline: none;
+  opacity: 1;
 }
 
 .portfolio__content {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-.portfolio__content.active {
-  opacity: 1;
-}
-
+.portfolio__content.active,
 .swiper-slide-active .portfolio__content {
   opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio__content {
+    margin-bottom: 1rem;
+  }
+  
+  .portfolio__img {
+    height: 200px;
+  }
 }
 
 /*==================== BLOG ====================*/
