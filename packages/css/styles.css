@@ -181,7 +181,31 @@ img {
   z-index: var(--z-fixed);
   background-color: var(--body-color);
 }
+.palestine-flag {
+  display: flex;
+  width: 100%;
+  height: 6px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
+.palestine-flag::before {
+  content: '';
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #000000 0%,    
+    #000000 25%,    
+    #ffffff 25%,   
+    #ffffff 50%,    
+    #007A3D 50%,    
+    #007A3D 75%,    
+    #CE1126 75%,    
+    #CE1126 100%    /* Red */
+  );
+}
 /*==================== NAV ====================*/
 .nav {
   max-width: 968px;
